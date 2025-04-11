@@ -51,7 +51,9 @@ def runCode(pid, codeStr):
 
     winapi.WaitForSingleObject(pyinit, wintypes.DWORD(10000))
 
+    codeStr = codeStr.replace("{{BASE_PATH}}", str(Path(".").resolve()))
     codeStr = codeStr.encode("utf-8") + b"\x00"
+
     debug("Allocating remote memory for Python code...")
     codeAddr = winapi.VirtualAllocEx(
         handle,
@@ -115,5 +117,5 @@ dll_path = str(Path(dll_name).resolve()).encode("utf-8") + b"\x00"
 injector.inject(dll_path, pid)
 success("DLL injection routine complete")
 
-codeStr = loadCode("code.py")
+codeStr = loadCode("cs2_loader.py")
 runCode(pid, codeStr)

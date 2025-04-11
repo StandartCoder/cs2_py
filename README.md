@@ -21,7 +21,7 @@ Handles memory, injection, and Python execution inside the CS2 process. Designed
 cs2_py/
 │
 ├── main.py              # Entry point: handles execution
-├── code.py              # Python code executed inside the target process
+├── cs2_loader.py        # Python code executed inside the target process
 ├── config.json          # Configuration for debug, target and python dll
 ├── python3x.dll         # Python runtime (needs to be added)
 │
@@ -74,7 +74,7 @@ python main.py
 ```
 This will:
 - Inject `python3x.dll` into `cs2.exe`
-- Execute `code.py` inside the target (internal)
+- Execute `cs2_loader.py` inside the target (internal)
 
 ---
 

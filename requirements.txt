@@ -2,3 +2,5 @@ winapi
 psutil
 pypiwin32
 pathlib
+comtypes
+importlib
