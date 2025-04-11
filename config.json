@@ -1,0 +1,5 @@
+{
+    "debug": true,
+    "target_process": "cs2.exe",
+    "dll_name": "python311.dll"
+}

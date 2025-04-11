@@ -1,0 +1,4 @@
+winapi
+psutil
+pypiwin32
+pathlib
