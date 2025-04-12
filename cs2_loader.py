@@ -12,7 +12,7 @@ sys.path.append(os.path.dirname(BASE_PATH))
 try:
     for name in list(sys.modules):
         try:
-            if name.startswith("cs2"):
+            if name == "cs2" or name.startswith("cs2."):
                 importlib.reload(sys.modules[name])
         except:
             pass  
