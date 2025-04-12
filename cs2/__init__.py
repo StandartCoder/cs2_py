@@ -12,4 +12,4 @@ def get_process_name():
 
 def run():
     pname = get_process_name()
-    ctypes.windll.user32.MessageBoxW(None, f"Running insides: {pname}", "CS2 Internal Check", 0)
+    ctypes.windll.user32.MessageBoxW(None, f"Running inside: {pname}", "CS2 Internal Check", 0)
