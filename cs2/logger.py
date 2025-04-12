@@ -75,3 +75,21 @@ class Logger:
         self.error(full_message)
 
 logger = Logger()
+
+def log(message):
+    logger.info(message)
+
+def debug(message):
+    logger.debug(message)
+
+def warn(message):
+    logger.warning(message)
+
+def error(message):
+    logger.error(message)
+
+def success(message):
+    logger.info(f"SUCCESS: {message}")
+
+def exception(message=""):
+    logger.exception(message)
