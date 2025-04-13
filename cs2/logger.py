@@ -74,7 +74,7 @@ class Logger:
         full_message = f"{message}\n{tb_str}" if message else tb_str
         self.error(full_message)
 
-logger = Logger()
+logger = Logger(level="DEBUG")
 
 def log(message):
     logger.info(message)
