@@ -1,15 +1,13 @@
 import ctypes
-import os
-
-def get_process_name():
-    GetModuleFileNameW = ctypes.windll.kernel32.GetModuleFileNameW
-    GetModuleFileNameW.argtypes = [ctypes.c_void_p, ctypes.c_wchar_p, ctypes.c_uint32]
-    GetModuleFileNameW.restype = ctypes.c_uint32
-
-    buffer = ctypes.create_unicode_buffer(260)
-    GetModuleFileNameW(None, buffer, 260)
-    return os.path.basename(buffer.value)
+from cs2.logger import logger
+from cs2.hook import dx_hook
 
 def run():
-    pname = get_process_name()
-    ctypes.windll.user32.MessageBoxW(None, f"Running inside: {pname}", "CS2 Internal Check", 0)
+    try:
+        logger.info("Initializing CS2 internal Python module")
+        dx_hook.initialize_hook()
+        logger.info("Hook successfully installed")
+        ctypes.windll.user32.MessageBoxW(None, "Hook installed successfully!", "CS2_PY", 0)
+    except Exception as e:
+        logger.exception("Failed to initialize CS2 Python internal module")
+        ctypes.windll.user32.MessageBoxW(None, f"CS2 Init Error:\n{e}", "CS2_PY ERROR", 0)
