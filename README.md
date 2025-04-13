@@ -5,6 +5,8 @@ Handles memory, injection, and Python execution inside the CS2 process. Designed
 
 > 🚨 No external shit, only internal!
 
+> ⚠️⚠️ DirectX Hooking currently not working! If you know how to fix it, please contact me or open pull request! THANKS ⚠️⚠️
+
 ---
 
 ## ⚙️ Features
